@@ -1,0 +1,18 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git remote add origin https://github.com/TheLuuiis/API-REST.git"
+  },
+  "author": "Luis David Gil",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "mongoose": "^8.3.2"
+  }
+}
