@@ -12,14 +12,13 @@ exports.listarTiposProyecto = async (req, res) => {
 
 // Creamos un nuevo tipo de proyecto
 exports.crearTipoProyecto = async (req, res) => {
-    const tipoProyecto = new TipoProyecto(req.body);
-    try {
-      const nuevoTipoProyecto = await tipoProyecto.save();
-      res.status(201).json(nuevoTipoProyecto);
-    } catch (error) {
-      res.status(400).json({ message: error.message });
-    }
-  };
+  try {
+    const nuevoTipoProyecto = await TipoProyecto.create(req.body);
+    res.status(201).json(nuevoTipoProyecto);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
 
 // Actualizamos un tipo de proyecto
 exports.actualizarTipoProyecto = async (req, res) => {
