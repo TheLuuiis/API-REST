@@ -30,3 +30,16 @@ exports.actualizarEtapa = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
+
+// Eliminamos etapa por su ID
+exports.eliminarEtapa = async (req, res) => {
+  try {
+      const etapaEliminada = await Universidad.findByIdAndDelete(req.params.id);
+      if(!etapaEliminada) {
+          return res.status(404).json({ message: 'Etapa no encontrada' });
+      }
+      res.status(200).json({ message: 'Etapa eliminada correctamente' });
+  } catch (error) {
+      res.status(500).json({ message: error.message });
+  }
+};

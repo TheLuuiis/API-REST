@@ -30,3 +30,16 @@ exports.actualizarTipoProyecto = async (req, res) => {
       res.status(400).json({ message: error.message });
     }
   };
+
+// Eliminamos un tipo de proyecto por su ID
+exports.eliminarTipoProyecto = async (req, res) => {
+  try {
+    const tipoProyectoEliminado = await TipoProyecto.findByIdAndDelete(req.params.id);
+    if(!tipoProyectoEliminado) {
+      return res.status(404).json({ message: 'Tipo de proyecto no encontrado'});
+    };
+    res.status(200).json({ message: 'Tipo de proyecto eliminado correctamente'});
+  } catch (error) {
+    res.status(500).json({ message: error.message})
+  }
+};

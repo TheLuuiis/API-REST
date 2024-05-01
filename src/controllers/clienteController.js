@@ -30,3 +30,16 @@ exports.actualizarCliente = async (req, res) => {
       res.status(400).json({ message: error.message });
     }
   };
+
+  // Eliminamos un cliente por su ID
+  exports.eliminarCliente = async (req, res) => {
+    try {
+        const clienteEliminado = await Cliente.findByIdAndDelete(req.params.id);
+        if(!clienteEliminado) {
+            return res.status(404).json({ message: 'Cliente no encontrado' });
+        };
+        res.status(200).json({ message: 'Cliente eliminado correctamente'});
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+  };

@@ -1,10 +1,11 @@
 const proyectoController = require('../controllers/proyectoController');
-const router = {
-  '/proyectos': {
-    'GET': proyectoController.listarProyectos,
-    'POST': proyectoController.crearProyecto,
-    'PUT': proyectoController.actualizarProyecto
-  }
-};
+const express = require('express');
+
+const router = express.Router();
+
+router.get('/', proyectoController.listarProyectos);
+router.post('/',proyectoController.crearProyecto);
+router.put('/:id',proyectoController.actualizarProyecto);
+router.delete('/:id', proyectoController.eliminarProyecto);
 
 module.exports = router;

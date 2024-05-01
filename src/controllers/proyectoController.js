@@ -30,3 +30,16 @@ exports.actualizarProyecto = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
+
+//Eliminamos un proyecto por su ID
+exports.eliminarProyecto  = async (req, res) => {
+  try {
+      const proyectoEliminado = await Universidad.findByIdAndDelete(req.params.id);
+      if(!proyectoEliminado) {
+          return res.status(404).json({ message: 'Proyecto no encontrado' });
+      }
+      res.status(200).json({ message: 'Proyecto eliminado correctamente' });
+  } catch (error) {
+      res.status(500).json({ message: error.message });
+  }
+};

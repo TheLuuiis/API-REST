@@ -1,10 +1,11 @@
 const universidadController = require('../controllers/universidadController');
-const router = {
-  '/universidades': {
-    'GET': universidadController.listarUniversidades,
-    'POST': universidadController.crearUniversidad,
-    'PUT': universidadController.actualizarUniversidad
-  }
-};
+const express = require('express');
+
+const router = express.Router();
+
+router.get('/', universidadController.listarUniversidades);
+router.post('/',universidadController.crearUniversidad);
+router.put('/:id',universidadController.actualizarUniversidad);
+router.delete('/:id', universidadController.eliminarUniversidad);
 
 module.exports = router;

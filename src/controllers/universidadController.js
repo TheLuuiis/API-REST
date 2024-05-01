@@ -1,7 +1,7 @@
 const Universidad = require('../models/universidadModel');
 
 // Listamos todas las universidades
-exports.lsitaruniversidades = async (req, res) => {
+exports.listarUniversidades = async (req, res) => {
     try {
         const universidades = await Universidad.find();
         res.json(universidades);
@@ -30,3 +30,16 @@ exports.actualizarUniversidad = async (req, res) => {
       res.status(400).json({ message: error.message });
     }
   };
+
+// Elimnamos una universidad por su ID
+exports.eliminarUniversidad = async (req, res) => {
+    try {
+        const universidadEliminada = await Universidad.findByIdAndDelete(req.params.id);
+        if(!universidadEliminada) {
+            return res.status(404).json({ message: 'Universidad no encontrada' });
+        }
+        res.status(200).json({ message: 'Universidad eliminada correctamente' });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
