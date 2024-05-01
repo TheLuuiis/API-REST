@@ -4,11 +4,9 @@ const mongoose = require('mongoose');
 const ClienteSchema = new mongoose.Schema({
     nombre: {
         type: String,
-        required: true
     },
     email: {
         type: String,
-        require: true
     },  
     fechaCreacion: {
         type: Date,

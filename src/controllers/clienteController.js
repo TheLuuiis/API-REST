@@ -14,8 +14,8 @@ exports.listarClientes = async (req, res) => {
 exports.crearCliente = async (req, res) => {
     const cliente = new Cliente(req.body);
     try {
-        const nuevoCliente = await cliente.save();
-        res.status(201).jso(nuevoCliente);
+        await cliente.save();
+        res.status(201).json(cliente);
     } catch (error) {
         res.status(400).json({ message: error.message });
     };
