@@ -1,6 +1,10 @@
 const express = require('express');
 require('./db');
 const ClienteRoutes = require('./routes/clienteRoutes')
+const EtapaRoutes = require('./routes/etapaRoutes')
+const ProyectoRoutes = require('./routes/proyectoRoutes')
+const TipoProyectoRoutes = require('./routes/tipoProyectoRoutes')
+const UniversidadRoutes = require('./routes/universidadRoutes')
 
 const app = express();
 
@@ -16,5 +20,9 @@ app.get('/', (req, res) => {
 })
 
 app.use('/cliente', ClienteRoutes);
+app.use('/etapa', EtapaRoutes);
+app.use('/proyecto', ProyectoRoutes);
+app.use('/tipoProyecto', TipoProyectoRoutes);
+app.use('/universidad', UniversidadRoutes);
 
 aplicacion();
