@@ -34,7 +34,7 @@ exports.actualizarProyecto = async (req, res) => {
 //Eliminamos un proyecto por su ID
 exports.eliminarProyecto  = async (req, res) => {
   try {
-      const proyectoEliminado = await Universidad.findByIdAndDelete(req.params.id);
+      const proyectoEliminado = await Proyecto.findByIdAndDelete(req.params.id);
       if(!proyectoEliminado) {
           return res.status(404).json({ message: 'Proyecto no encontrado' });
       }

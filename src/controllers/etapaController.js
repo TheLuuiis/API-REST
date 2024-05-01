@@ -34,7 +34,7 @@ exports.actualizarEtapa = async (req, res) => {
 // Eliminamos etapa por su ID
 exports.eliminarEtapa = async (req, res) => {
   try {
-      const etapaEliminada = await Universidad.findByIdAndDelete(req.params.id);
+      const etapaEliminada = await Etapa.findByIdAndDelete(req.params.id);
       if(!etapaEliminada) {
           return res.status(404).json({ message: 'Etapa no encontrada' });
       }
