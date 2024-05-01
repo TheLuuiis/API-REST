@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Url de la conexión a la base de datos
-const mongoURL = '';
+const mongoURL = 'mongodb://localhost:27017';
 
 // Configuramos la conexión a mongoDB
 mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true });
