@@ -8,7 +8,7 @@ const TipoProyectoSchema = new mongoose.Schema ({
     },
     fechaCreacion: {
         type: Date,
-        dafault: Date.now
+        default: Date.now
     },
     fechaActualizacion: {   
         type: Date,
