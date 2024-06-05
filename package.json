@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git remote add origin https://github.com/TheLuuiis/API-REST.git"
   },
-  "author": "Luis David Gil, Cesar Augusto Gonzales & Juan Sebastian Gonzales",
+  "author": "Luis David Gil, Cesar Augusto Gonzales, Nazly Ester Palencia & Juan Sebastian Gonzales",
   "license": "ISC",
   "description": "",
   "dependencies": {
