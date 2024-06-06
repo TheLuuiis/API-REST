@@ -1,48 +1,40 @@
-version: "3.2"
+version: "3.3"
 services:
-  myapp:
-    container_name: myapp
+  myapp-1:
+    container_name: myapp-1
+    image: myapp:v1
     build: 
       context: .
     ports:
-      - "4321"
+      - "6078:4323"
     links:
       - mongodb
     networks:
       - mynetwork
-  myapp2:
-    container_name: myapp2
+  myapp-2:
+    container_name: myapp-2
+    image: myapp:v1
     build: 
       context: .
     ports:
-      - "4321"
+      - "6079:4323"
     links:
       - mongodb
     networks:
       - mynetwork
-  myapp3:
-    container_name: myapp3
-    build: 
-      context: .
-    ports:
-      - "4321"
-    links:
-      - mongodb
-    networks:
-      - mynetwork
-  balanceador:
-    container_name: balanceador
-    image: balanceador:v1
+  balanceador-modulo-1:
+    container_name: balanceador-1
+    image: balanceador-1:v1
     build: 
       context: ./Tools
     ports:
-      - "43215:80"
+      - "6062:80"
     networks:
       - mynetwork
   mongodb:
     image: mongo
     ports:
-      - "27017:27017"
+      - "27020:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin
@@ -50,6 +42,4 @@ services:
       - mynetwork
 
 networks:
-  mynetwork :
-  
-
+  mynetwork:

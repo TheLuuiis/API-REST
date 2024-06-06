@@ -10,8 +10,8 @@ const app = express();
 app.use(express.json());
 
 async function aplicacion() {
-    await app.listen(4321);
-    console.log("Mi puerto es el 4321");
+    await app.listen(4323);
+    console.log("Mi puerto es el 4323");
 }
 
 app.get('/', (req, res) => {
