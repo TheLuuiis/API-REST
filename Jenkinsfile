@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clonacion del Repositorio') {
             steps {
-                git branch: 'main', url: 'https://github.com/TheLuuiis/API-REST'
+                git branch: 'master', url: 'https://github.com/TheLuuiis/API-REST'
             }
         }
         stage('Construccion de Docker image') {
