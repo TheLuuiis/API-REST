@@ -27,7 +27,7 @@ pipeline {
             emailext(
                 subject: "Jenkins Build ${currentBuild.fullDisplayName}",
                 body: "Build ${currentBuild.fullDisplayName} completed",
-                to: "juan.madrinanjp@est.iudigital.edu.co"
+                to: "cesar.gonzalez@est.iudigital.edu.co"
             )
         }
     }
